@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import { IoIosMenu } from "react-icons/io";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   const navUl = useRef();
@@ -28,19 +29,29 @@ const Navbar = () => {
         </div>
         <ul className="w-full px-5 h-0 overflow-hidden" ref={navUl}>
           <li className="py-2">
-            <a href="#">Home</a>
+            <NavLink to="/" onClick={handleNavbar}>
+              Home
+            </NavLink>
           </li>
           <li className="py-2">
-            <a href="#">About</a>
+            <NavLink to="/about" onClick={handleNavbar}>
+              About
+            </NavLink>
           </li>
           <li className="py-2">
-            <a href="#">Resume</a>
+            <a href="#" onClick={handleNavbar}>
+              Resume
+            </a>
           </li>
           <li className="py-2">
-            <a href="#">Portfolio</a>
+            <a href="#" onClick={handleNavbar}>
+              Portfolio
+            </a>
           </li>
           <li className="py-2">
-            <a href="#">Contact</a>
+            <a href="#" onClick={handleNavbar}>
+              Contact
+            </a>
           </li>
         </ul>
       </nav>
@@ -51,14 +62,14 @@ const Navbar = () => {
           </a>
           <ul className="flex gap-10 lg:text-xl text-lg">
             <li className="py-2">
-              <a href="#" className="text-gray-600 font-medium">
+              <NavLink to="/" className="text-gray-600 font-medium">
                 Home
-              </a>
+              </NavLink>
             </li>
             <li className="py-2">
-              <a href="#" className="text-gray-600 font-medium">
+              <NavLink to="/about" className="text-gray-600 font-medium">
                 About
-              </a>
+              </NavLink>
             </li>
             <li className="py-2">
               <a href="#" className="text-gray-600 font-medium">
