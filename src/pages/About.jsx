@@ -1,11 +1,40 @@
-import React from "react";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
 
 const About = () => {
+  const about = useRef();
+  useEffect(() => {
+    // Animation for Mobile
+    if (window.innerWidth <= 768) {
+      gsap.from(about.current, {
+        x: -50,
+        duration: 0.5,
+        opacity: 0,
+      });
+    }
+
+    //Animation for Desktop
+    if (window.innerWidth > 768) {
+      gsap.from(".left", {
+        x: -500,
+        duration: 0.5,
+        opacity: 0,
+      });
+      gsap.from(".right", {
+        x: 500,
+        duration: 0.5,
+        opacity: 0,
+      });
+    }
+  }, []);
   return (
     <>
-      <div className="max-w-[1400px] w-[90%] mx-auto md:mt-32 flex gap-5">
-        <div className="w-1/2  bg-blue-500 hidden md:block"></div>
-        <div className="md:w-1/2">
+      <div
+        className="max-w-[1400px] w-[90%] mx-auto md:mt-32 flex gap-5 about-wrapper"
+        ref={about}
+      >
+        <div className="w-1/2  bg-blue-500 hidden md:block left"></div>
+        <div className="md:w-1/2 right">
           <div>
             <h1 className="mt-20 font-bold text-3xl md:text-6xl">About Me</h1>
             <p className="text-gray-400  mt-4 md:mt-10">

@@ -20,9 +20,9 @@ const Navbar = () => {
           className="flex justify-between items-center h-16 px-5
       "
         >
-          <a href="" className="logo text-2xl font-bold">
+          <NavLink to="/" className="logo text-2xl font-bold">
             <span className="text-blue-400">M</span>.R
-          </a>
+          </NavLink>
           <div className="icon" onClick={handleNavbar}>
             <IoIosMenu className="text-2xl" />
           </div>
@@ -39,9 +39,9 @@ const Navbar = () => {
             </NavLink>
           </li>
           <li className="py-2">
-            <a href="#" onClick={handleNavbar}>
+            <NavLink to="/resume" onClick={handleNavbar}>
               Resume
-            </a>
+            </NavLink>
           </li>
           <li className="py-2">
             <a href="#" onClick={handleNavbar}>
@@ -72,9 +72,9 @@ const Navbar = () => {
               </NavLink>
             </li>
             <li className="py-2">
-              <a href="#" className="text-gray-600 font-medium">
+              <NavLink to="/resume" className="text-gray-600 font-medium">
                 Resume
-              </a>
+              </NavLink>
             </li>
             <li className="py-2">
               <a href="#" className="text-gray-600 font-medium">
