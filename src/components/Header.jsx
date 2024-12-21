@@ -1,6 +1,17 @@
+import { useNavigate } from "react-router-dom";
 import TypeWrite from "./TypeWrite";
+import { useEffect } from "react";
+import gsap from "gsap";
 
 const Header = () => {
+  useEffect(() => {
+    gsap.from(".content", {
+      y: 100,
+      duration: 1,
+      opacity: 0,
+    });
+  }, []);
+  const navigate = useNavigate();
   return (
     <>
       <header className="w-full h-screen relative flex justify-center items-center">
@@ -13,7 +24,12 @@ const Header = () => {
             Moosa Raheel
           </h1>
           <TypeWrite />
-          <button className="bg-blue-100 py-3 px-5 sm:text-xl text-sm mt-5 rounded-lg lg:mt-8 lg:text-2xl">
+          <button
+            className="bg-blue-100 py-3 px-5 sm:text-xl text-sm mt-5 rounded-lg lg:mt-8 lg:text-2xl"
+            onClick={() => {
+              navigate("/about");
+            }}
+          >
             About Him
           </button>
         </div>

@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 import RootLayout from "./layouts/RootLayout";
 import { About, Home, Resume } from "./pages";
+import useLenis from "./hooks/uselenis";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -17,6 +18,7 @@ const router = createBrowserRouter(
   )
 );
 const App = () => {
+  useLenis();
   return <RouterProvider router={router} />;
 };
 

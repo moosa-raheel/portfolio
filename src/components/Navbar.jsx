@@ -1,8 +1,18 @@
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { IoIosMenu } from "react-icons/io";
 import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
+  const [activeNav, setActiveNav] = useState(false);
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      if (document.documentElement.scrollTop > 80) {
+        setActiveNav(true);
+      } else {
+        setActiveNav(false);
+      }
+    });
+  });
   const navUl = useRef();
   const handleNavbar = () => {
     if (navUl.current.classList.contains("h-0")) {
@@ -55,7 +65,11 @@ const Navbar = () => {
           </li>
         </ul>
       </nav>
-      <nav className="w-full h-24 fixed top-0 left-0 hidden md:block z-50">
+      <nav
+        className={`w-full h-24 fixed top-0 left-0 hidden md:block z-50 ${
+          activeNav ? "bg-white shadow-lg" : ""
+        }`}
+      >
         <div className="max-w-[1400px] h-full  mx-auto flex items-center justify-between w-[90%]">
           <a href="" className="logo lg:text-5xl text-4xl font-bold">
             <span className="text-blue-400">M</span>.R
