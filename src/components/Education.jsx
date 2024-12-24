@@ -1,4 +1,4 @@
-import React from "react";
+import ScrollingAnimation from "../UI/ScrollingAnimation";
 
 const Education = ({ year, title, desc }) => {
   return (

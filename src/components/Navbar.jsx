@@ -59,9 +59,9 @@ const Navbar = () => {
             </a>
           </li>
           <li className="py-2">
-            <a href="#" onClick={handleNavbar}>
+            <NavLink to="/contact" onClick={handleNavbar}>
               Contact
-            </a>
+            </NavLink>
           </li>
         </ul>
       </nav>
@@ -96,9 +96,9 @@ const Navbar = () => {
               </a>
             </li>
             <li className="py-2">
-              <a href="#" className="text-gray-600 font-medium">
+              <NavLink to="/contact" className="text-gray-600 font-medium">
                 Contact
-              </a>
+              </NavLink>
             </li>
           </ul>
         </div>

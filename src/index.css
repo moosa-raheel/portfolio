@@ -3,8 +3,11 @@
 @tailwind utilities;
 :root {
   font-family: Poppins, Arial, Helvetica, sans-serif;
+  scroll-behavior: smooth;
 }
 body {
+  width: -100%;
+  min-height: 100vh;
   overflow-x: hidden;
 }
 @media (min-width: 768px) {

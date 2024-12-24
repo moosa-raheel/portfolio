@@ -1,4 +1,5 @@
 import React from "react";
+import ScrollingAnimation from "../UI/ScrollingAnimation";
 
 const Experience = ({ year, title, desc }) => {
   return (

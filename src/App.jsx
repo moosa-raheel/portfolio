@@ -5,7 +5,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import RootLayout from "./layouts/RootLayout";
-import { About, Home, Resume } from "./pages";
+import { About, Home, Resume, Contact } from "./pages";
 import useLenis from "./hooks/uselenis";
 
 const router = createBrowserRouter(
@@ -14,6 +14,7 @@ const router = createBrowserRouter(
       <Route index element={<Home />} />
       <Route path="/about" element={<About />} />
       <Route path="/resume" element={<Resume />} />
+      <Route path="/contact" element={<Contact />} />
     </Route>
   )
 );
