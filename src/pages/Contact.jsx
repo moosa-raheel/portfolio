@@ -64,7 +64,11 @@ const Contact = () => {
       <div className="form-container flex  mt-24 my-10 flex-wrap md:flex-nowrap bg-gray-100  rounded-xl">
         <div className="img md:w-1/2 w-full bg-blue-500 h-96 md:h-auto order-2 md:order-1 "></div>
         <div className="form md:w-1/2 w-full order-1 md:order-2 px-10 py-10 ">
-          <ContactForm formData={formData} handleFormData={handleFormData} />
+          <ContactForm
+            formData={formData}
+            handleFormData={handleFormData}
+            setFormData={setFormData}
+          />
         </div>
       </div>
     </div>

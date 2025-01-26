@@ -1,6 +1,7 @@
 import React from "react";
+import { toast } from "react-toastify";
 
-const ContactForm = ({ formData, handleFormData }) => {
+const ContactForm = ({ formData, handleFormData, setFormData }) => {
   const sendEmail = async (e) => {
     e.preventDefault();
     const url = "https://emailapi-production-ed35.up.railway.app/sendmail";
@@ -19,9 +20,12 @@ const ContactForm = ({ formData, handleFormData }) => {
       });
       const data = await response.json();
       console.log(data);
+      toast.success("Message has been send Successfully...");
     } catch (error) {
       console.log(error);
+      toast.error("Can't send message right now try again later");
     }
+    setFormData({ name: "", email: "", subject: "", message: "" });
   };
   return (
     <>
