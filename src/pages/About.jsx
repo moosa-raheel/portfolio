@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
+import Helmet from "react-helmet";
 
 const About = () => {
   const about = useRef();
@@ -29,6 +30,9 @@ const About = () => {
   }, []);
   return (
     <>
+      <Helmet>
+        <title>Moosa Raheel - A full stack web developer - About Page</title>
+      </Helmet>
       <div
         className="max-w-[1400px] w-[90%] mx-auto md:mt-32 flex gap-5 about-wrapper"
         ref={about}

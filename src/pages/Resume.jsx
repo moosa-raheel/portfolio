@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import Education from "../components/Education";
 import Experience from "../components/Experience";
 import Skill from "../components/Skill";
+import { Helmet } from "react-helmet";
 const Resume = () => {
   const educationRef = useRef();
   const experienceRef = useRef();
@@ -31,6 +32,9 @@ const Resume = () => {
   }, []);
   return (
     <>
+      <Helmet>
+        <title>Moosa Raheel - A full stack web developer - Resume Page</title>
+      </Helmet>
       <div className="mt-20 max-w-[1400px] w-[90%] mx-auto flex flex-col md:flex-row md:mt-28">
         <div className="menu md:w-1/4 md:flex md:justify-center relative">
           <ul className="font-bold md:text-xl flex flex-col gap-4 md:fixed md:top-64">
