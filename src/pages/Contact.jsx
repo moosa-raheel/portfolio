@@ -4,6 +4,7 @@ import { FaLocationDot } from "react-icons/fa6";
 import { FaPhoneAlt } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { BsGlobe2 } from "react-icons/bs";
+import ContactForm from "../components/ContactForm";
 import gsap from "gsap";
 
 const Contact = () => {

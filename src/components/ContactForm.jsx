@@ -1,9 +1,31 @@
 import React from "react";
 
 const ContactForm = ({ formData, handleFormData }) => {
+  const sendEmail = async (e) => {
+    e.preventDefault();
+    const url = "https://emailapi-production-ed35.up.railway.app/sendmail";
+    try {
+      const response = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          from_email: formData.email,
+          name: formData.name,
+          subject: formData.subject,
+          message: formData.message,
+        }),
+      });
+      const data = await response.json();
+      console.log(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <>
-      <form>
+      <form onSubmit={sendEmail} method="POST">
         <input
           type="text"
           placeholder="Your Name"
